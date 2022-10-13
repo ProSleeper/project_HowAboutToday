@@ -75,6 +75,7 @@ class AccomodationServiceTest {
     @Test
     public void 장바구니에서_결제로_넘기는_테스트(){
 
+        System.out.println("테스트");
 //        Cart cart = new Cart();
 
     }
