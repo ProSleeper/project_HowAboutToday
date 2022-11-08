@@ -169,8 +169,13 @@
                 type: 'DELETE',
                 url: '/rest/wish/' + wishListNum,
             }).done(function (){
-                alert("삭제가 완료되었습니다");
-                window.location.reload();
+                Swal.fire({
+                    icon:'success',
+                    title:'삭제가 완료되었습니다. ',
+                }).then(result => {
+
+                    window.location.reload();
+                });
             }).fail(function(error){
                 alert(JSON.stringify(error));
             });

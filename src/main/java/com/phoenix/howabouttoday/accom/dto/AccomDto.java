@@ -5,6 +5,8 @@ import com.phoenix.howabouttoday.accom.entity.AccomCategory;
 import com.phoenix.howabouttoday.accom.entity.AccomImage;
 import com.phoenix.howabouttoday.accom.entity.Accommodation;
 import com.phoenix.howabouttoday.accom.entity.Region;
+import com.phoenix.howabouttoday.member.wishlist.controller.WishListDto;
+import com.phoenix.howabouttoday.member.wishlist.domain.WishList;
 import com.phoenix.howabouttoday.room.entity.Room;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,8 +44,10 @@ public class AccomDto {
 
         private String lowPrice; //숙소의 객실 최저가
 
-
         private AccomImageDto.ResponseDto accommodationImage;//숙소의 대표 이미지
+
+
+
 
         public ResponsePageDto(Accommodation accommodation) {
             this.accomName = accommodation.getAccomName();
@@ -62,6 +66,9 @@ public class AccomDto {
             this.accomNum = accommodation.getAccomNum();
             this.accommodationImage = new AccomImageDto.ResponseDto(accommodation.getAccommodationImage().get(0));
             this.lowPrice = DecimalFormat.getInstance().format(accommodation.getLowPrice());
+
         }
+
+
     }
 }
