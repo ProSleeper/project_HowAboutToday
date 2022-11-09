@@ -54,7 +54,7 @@
                                         <p class="mr-2" th:text="${accom.accomAddress}"></p>
                                         <p>
                                             <span class="badge badge-warning text-white font-size-16"
-                                                  th:text="${accom.accomRating}"></span>&nbsp;
+                                                  th:text="${#numbers.formatDecimal(accom.accomRating, 1, 1)}"></span>&nbsp;
                                             <span th:text="|(${accom.totalReviewNum}개의 리뷰)|"></span>
                                         </p>
                                     </div>

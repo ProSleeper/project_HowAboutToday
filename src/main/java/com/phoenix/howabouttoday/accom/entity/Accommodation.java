@@ -108,11 +108,15 @@ public class Accommodation {
     }
 
     public void increaseRating(){
-        this.accomRating = this.room.stream()
-                .mapToDouble(room -> room.getRoomRating())
-                .average().getAsDouble();
-        this.totalReviewNum += 1;
+         Double totalRoomRating = this.room.stream().mapToDouble(room -> room.getRoomRating() * room.getRoomReviewNum()).sum();
+         Integer totalRoomCount = this.room.stream().mapToInt(room -> room.getRoomReviewNum()).sum();
 
+//        Double totalRoomRating = this.room.stream().mapToDouble(room -> room.getRoomRating()).sum();
+//        Integer totalRoomCount = this.room.stream().mapToInt(room -> room.getRoomReviewNum() != 0 ? 1 : 0).sum();
+
+
+        this.accomRating = Math.round((totalRoomRating / totalRoomCount.doubleValue()) * 10.0) / 10.0;
+        this.totalReviewNum += 1;
     }
 
     //== lowPrice 업데이트가 필요할때 쓰는 메서드 ==//

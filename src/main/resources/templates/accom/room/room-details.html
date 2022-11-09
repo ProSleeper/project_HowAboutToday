@@ -50,7 +50,8 @@
                                     <div class="single-content-item pb-4">
                                         <h3 class="title font-size-26" th:text="${roomDetailDTO?.roomName}">방 이름</h3>
                                         <p class="pt-2">
-                                            <span class="badge badge-warning text-white font-size-16" th:text="${roomDetailDTO?.roomRating}">4.6</span>
+
+                                            <span class="badge badge-warning text-white font-size-16" th:text="${#numbers.formatDecimal(roomDetailDTO?.roomRating, 1, 1)}">4.6</span>
                                             <span th:text="|(${roomDetailDTO?.roomReviewNum}개의 리뷰)|">(4,209개의 리뷰)</span>
                                         </p>
                                     </div><!-- end single-content-item -->

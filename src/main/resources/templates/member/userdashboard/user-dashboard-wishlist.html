@@ -70,7 +70,7 @@
                                                     <h3 class="card-title justify-"><a th:href="@{/hotel-single(accomNum=${wish.accomNum})}" href="hotel-single.html" th:text="${wish.accomName}">숙소 이름</a></h3>
                                                     <p class="card-meta" th:text="${wish.accomAdress}" >숙소 주소</p>
                                                     <div class="card-rating">
-                                                        <span class="badge text-white" th:text="${wish.accomRating}">별점 수치</span>
+                                                        <span class="badge text-white" th:text="${#numbers.formatDecimal(wish.accomRating, 1, 1)}">별점 수치</span>
 
                                                         <span class="rating__text" th:text="|${wish.reviewCount}개의 리뷰|">리뷰 갯수</span>
                                                     </div>

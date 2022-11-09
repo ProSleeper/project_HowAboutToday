@@ -80,7 +80,8 @@ public class Room {
 
     public void calculateRating(Double inputRating){
         addReviewCount();
-        this.roomRating = (this.roomRating * (getRoomReviewNum() - 1) + inputRating) / getRoomReviewNum();
+
+        this.roomRating = Math.round(((this.roomRating * (getRoomReviewNum() - 1) + inputRating) / getRoomReviewNum()) * 10.0) / 10.0;
 
     }
 }

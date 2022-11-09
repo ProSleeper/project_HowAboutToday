@@ -313,7 +313,7 @@
                                     <h3 class="card-title"><a th:href="@{/hotel-single(accomNum=${accom.accomNum})}" href="hotel-single.html" th:text="${accom.accomName}">숙소 이름</a></h3>
                                     <p class="card-meta" th:text="${accom.accomAddress}">숙소 주소</p>
                                     <div class="card-rating">
-                                        <span class="badge text-white" th:text="${accom.accomRating}">평점</span>&nbsp;
+                                        <span class="badge text-white" th:text="${#numbers.formatDecimal(accom.accomRating, 1, 1)}">평점</span>&nbsp;
 
                                         <span class="rating__text" th:text="|${accom.totalReviewNum}개의 리뷰|">(30 Reviews)</span>
                                     </div>
