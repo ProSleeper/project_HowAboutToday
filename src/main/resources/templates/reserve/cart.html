@@ -60,7 +60,7 @@
                             </thead>
                             <tbody>
                             <th:block th:if="${checkCart}">
-                            <form action="/orders/payment" method="get" id="cartForm">
+                            <form action="/orders/payment" method="get" id="cartForm">`
                             <tr th:each="cart:${cartList}">
 
                                 <th scope="row">
@@ -80,11 +80,11 @@
 
 
 
-                                        <a href="room-details.html" class="d-block" th:href="@{/room-details}">
-                                            <img src="/images/room1.jpg" alt="" class="flex-shrink-0">
+                                        <a href="room-details.html" class="d-block" th:href="@{/room-details(roomNum=${cart.roomNum})}">
+                                            <img th:src="@{/data/images/{roomImage}(roomImage=${cart.roomFileName})}" alt="" class="flex-shrink-0">
                                         </a>
                                        <div class="product-content">
-                                           <a href="room-details.html" class="title" th:href="@{/room-details}"
+                                           <a href="room-details.html" class="title" th:href="@{/room-details(roomNum=${cart.roomNum})}"
                                               th:text="${cart.getRoomName()}">
                                            호텔 방 이름</a>
                                            <div class="product-info-wrap">

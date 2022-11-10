@@ -50,7 +50,8 @@
                                     <div class="single-content-item pb-4">
                                         <h3 class="title font-size-26" th:text="${roomDetailDTO?.roomName}">방 이름</h3>
                                         <p class="pt-2">
-                                            <span class="badge badge-warning text-white font-size-16" th:text="${roomDetailDTO?.roomRating}">4.6</span>
+
+                                            <span class="badge badge-warning text-white font-size-16" th:text="${#numbers.formatDecimal(roomDetailDTO?.roomRating, 1, 1)}">4.6</span>
                                             <span th:text="|(${roomDetailDTO?.roomReviewNum}개의 리뷰)|">(4,209개의 리뷰)</span>
                                         </p>
                                     </div><!-- end single-content-item -->
@@ -131,7 +132,7 @@
                                                                             <label class="label-text">성함</label>
                                                                             <div class="form-group">
                                                                                 <span class="la la-user form-icon"></span>
-                                                                                <input class="form-control" type="text" name="text" id="reviewMemberName" placeholder="투숙객 성함">
+                                                                                <input class="form-control" type="text" name="text" id="reviewMemberName" th:value="${sessionDTO?.getNickname()}" placeholder="투숙객 성함" th:disabled="disabled">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -362,7 +363,7 @@
                     let star = "";
                     newReview +=                `<div class="comment">`
                     newReview +=                `<div class="comment-avatar">`
-                    newReview +=                    `<img class="avatar__img" alt="" src="/data/images/${review[i].reviewFileName}">`
+                    newReview +=                    `<img class="avatar__img" alt="" src="/images/profile5.png">`
                     newReview +=                `</div>`
                     newReview +=                    `<div class="comment-body">`
                     newReview +=                        `<div class="meta-data">`
@@ -449,10 +450,10 @@
             let maxGuest = $("#maxGuest").val();
             //== 인원수를 전부다 0명으로 체크했을때 검사 ==//
             if((adultQty+childQty) == 0){
-                alert("인원수는 0명 이하일 수 없습니다.");
+                swalWarning("인원수는 0명 이하일 수 없습니다.");
                 return;
             }else if((parseInt(adultQty)+parseInt(childQty)) > maxGuest){
-                alert("객실의 최대수용인원보다 클 수 없습니다")
+                swalWarning("객실의 최대수용인원보다 클 수 없습니다")
                 return false;
             }
 
@@ -495,7 +496,7 @@
 
                 return;
             }else if((parseInt(adultQty)+parseInt(childQty)) > maxGuest){
-                alert("객실의 최대수용인원보다 클 수 없습니다")
+                swalWarning("객실의 최대수용인원보다 클 수 없습니다")
                 return false;
             }
 

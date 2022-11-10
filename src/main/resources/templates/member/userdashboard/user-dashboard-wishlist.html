@@ -70,14 +70,14 @@
                                                     <h3 class="card-title justify-"><a th:href="@{/hotel-single(accomNum=${wish.accomNum})}" href="hotel-single.html" th:text="${wish.accomName}">숙소 이름</a></h3>
                                                     <p class="card-meta" th:text="${wish.accomAdress}" >숙소 주소</p>
                                                     <div class="card-rating">
-                                                        <span class="badge text-white" th:text="${wish.accomRating}">별점 수치</span>
+                                                        <span class="badge text-white" th:text="${#numbers.formatDecimal(wish.accomRating, 1, 1)}">별점 수치</span>
 
                                                         <span class="rating__text" th:text="|${wish.reviewCount}개의 리뷰|">리뷰 갯수</span>
                                                     </div>
                                                     <div class="card-price d-flex align-items-center justify-content-between">
                                                         <p>
                                                             <span class="price__from" >최저가 :</span>&nbsp;
-                                                            <span class="price__num" th:text="|${#numbers.formatInteger(wish.accomLowPrice, 3 , 'COMMA') }원 ~|">숙소 가격</span>
+                                                            <span class="price__num" th:text="|${#numbers.formatInteger(wish.accomPrice, 3 , 'COMMA') }원 ~|">숙소 가격</span>
 
                                                         </p>
                                                         <a th:href="@{/hotel-single(accomNum=${wish.accomNum})}" href="hotel-single.html" class="btn-text">[[|상세 보기|]]<i class="la la-angle-right"></i></a>
@@ -169,8 +169,13 @@
                 type: 'DELETE',
                 url: '/rest/wish/' + wishListNum,
             }).done(function (){
-                alert("삭제가 완료되었습니다");
-                window.location.reload();
+                Swal.fire({
+                    icon:'success',
+                    title:'삭제가 완료되었습니다. ',
+                }).then(result => {
+
+                    window.location.reload();
+                });
             }).fail(function(error){
                 alert(JSON.stringify(error));
             });

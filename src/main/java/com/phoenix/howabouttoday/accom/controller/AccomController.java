@@ -91,6 +91,9 @@ public class AccomController {
             model.addAttribute("sessionDTO", sessionDTO);
         }
 
+        /**최저가 설정 로직**/
+        //List<Accommodation> accoms = accommodationService.getAccoms();
+
         /** 화면에 표시할 한글카테고리 이름 조회**/
         String viewName = accomCategoryService.getAccomViewName(category_name);
 
@@ -151,9 +154,14 @@ public class AccomController {
 
     /** 인기여행지 컨트롤러 **/
     @GetMapping("/accom/ppl/{regionNum}")
-    public String pplTourist(@PathVariable(required = false) Long regionNum,
+    public String pplTourist(@LoginUser SessionDTO sessionDTO,
+                             @PathVariable(required = false) Long regionNum,
                              Model model){
 
+
+        if(sessionDTO != null) {
+            model.addAttribute("sessionDTO", sessionDTO);
+        }
 
         /** 로그인및 회원가입을 위한 Object 반환하는 로직 **/
         MemberDTO memberDTO = new MemberDTO();

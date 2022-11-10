@@ -39,14 +39,14 @@ public class AccomodationService {
     private final RegionRepository regionRepository;
     private final AccommodationImageRepository accommodationImageRepository;
 
-//    /** 전체숙소 lowpriceTest **/
-//    public List<Accommodation> getAccoms(){
-//        List<Accommodation> all = accommodationRepository.findAll();
-//        for (Accommodation accommodation : all) {
-//            accommodation.modifyLowPrice(accommodation);
-//        }
-//        return all;
-//    }
+    /** 전체숙소 lowpriceTest **/
+    public List<Accommodation> getAccoms(){
+        List<Accommodation> all = accommodationRepository.findAll();
+        for (Accommodation accommodation : all) {
+            accommodation.modifyLowPrice(accommodation);
+        }
+        return all;
+    }
 
     /** 지역이 없을때 전체조회 **/
     public Slice<AccomDto.ResponsePageDto> getAccomPageList(Pageable pageable,String category_name , String keyword,int maxPrice,int minPrice, Double accomRating) {

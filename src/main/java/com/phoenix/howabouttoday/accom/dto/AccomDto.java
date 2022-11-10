@@ -5,6 +5,8 @@ import com.phoenix.howabouttoday.accom.entity.AccomCategory;
 import com.phoenix.howabouttoday.accom.entity.AccomImage;
 import com.phoenix.howabouttoday.accom.entity.Accommodation;
 import com.phoenix.howabouttoday.accom.entity.Region;
+import com.phoenix.howabouttoday.member.wishlist.controller.WishListDto;
+import com.phoenix.howabouttoday.member.wishlist.domain.WishList;
 import com.phoenix.howabouttoday.room.entity.Room;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,19 +44,23 @@ public class AccomDto {
 
         private String lowPrice; //숙소의 객실 최저가
 
-
         private AccomImageDto.ResponseDto accommodationImage;//숙소의 대표 이미지
+
+
+
 
         public ResponsePageDto(Accommodation accommodation) {
             this.accomName = accommodation.getAccomName();
             this.accomCategory = new AccomCategoryDto.ResponseDto(accommodation.getAccomCategory());
             this.accomAddress = accommodation.getAccomAddress1() +  " "
                     +  accommodation.getAccomAddress2() + " " + accommodation.getAccomAddress3();
-            this.accomRating = accommodation.getRoom().stream()
-                    .mapToDouble(room -> room.getRoomRating())
-                    .average().getAsDouble();
-            DecimalFormat df1 = new DecimalFormat("0.0");
-            this.accomRating = Double.valueOf(df1.format(this.accomRating));
+
+            this.accomRating = accommodation.getAccomRating();
+//            this.accomRating = accommodation.getRoom().stream()
+//                    .mapToDouble(room -> room.getRoomRating())
+//                    .average().getAsDouble();
+//            DecimalFormat df1 = new DecimalFormat("0.0");
+//            this.accomRating = Double.valueOf(df1.format(this.accomRating));
 
             this.totalReviewNum = accommodation.getRoom().stream()
                     .mapToInt(room -> room.getRoomReviewNum())
@@ -62,6 +68,9 @@ public class AccomDto {
             this.accomNum = accommodation.getAccomNum();
             this.accommodationImage = new AccomImageDto.ResponseDto(accommodation.getAccommodationImage().get(0));
             this.lowPrice = DecimalFormat.getInstance().format(accommodation.getLowPrice());
+
         }
+
+
     }
 }

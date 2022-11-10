@@ -8,6 +8,7 @@
 package com.phoenix.howabouttoday.payment.dto;
 
 import com.phoenix.howabouttoday.reserve.domain.Reservation.Reservation;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -18,6 +19,7 @@ import java.util.Locale;
 
 @Getter
 @Builder
+@AllArgsConstructor
 public class OrdersDetailDTO {
     private Long ordersDetailNum;
     private String accomType;
@@ -36,7 +38,7 @@ public class OrdersDetailDTO {
     private String roomNum;
     private String checkIn;
     private String checkOut;
-
+    private String roomOriginFileName;
 
     public OrdersDetailDTO(Long ordersDetailNum, String accomType, String accomTypeFilePath, String accomName, String accomRegion, String orderDate, String usePeriod, String startDate, String endDate, String startWeek, String endWeek, String price, String usedStatus, String roomName, String roomNum, String checkIn, String checkOut) {
         this.ordersDetailNum = ordersDetailNum;
@@ -81,5 +83,6 @@ public class OrdersDetailDTO {
         this.roomNum = reservation.getRoom().getAccommodation().getAccomNum().toString();
         this.checkIn = reservation.getRoom().getAccommodation().getCheckIn().toString();
         this.checkOut = reservation.getRoom().getAccommodation().getCheckOut().toString();
+        this.roomOriginFileName = reservation.getRoom().getRoomImageList().get(0).getRoomOriginFileName();
     }
 }

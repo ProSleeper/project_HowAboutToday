@@ -186,19 +186,19 @@
                                     <input type="hidden" id="id" th:field="*{memberNum}"/>
                                     <input type="hidden" th:field="*{email}">
                                     <div class="form-content">
-                                        <div class="user-profile-action d-flex align-items-center pb-4">
-                                            <div class="user-pro-img">
-                                                <img src="/images/team1.jpg" alt="user-image">
-                                            </div>
-                                            <div class="upload-btn-box">
-                                                <p class="pb-2 font-size-15 line-height-24">최대 파일 크기는 5MB, 최소 치수: 150x150이며 적합한 파일은 .jpg.png입니다.</p>
-                                                <div class="file-upload-wrap file-upload-wrap-2">
-                                                    <input type="file" name="files[]" class="multi file-upload-input with-preview" maxlength="1">
-                                                    <span class="file-upload-text"><i class="la la-upload mr-2"></i>이미지 업로드</span>
-                                                    <a href="#" class="theme-btn theme-btn-small">이미지 삭제</a>
-                                                </div>
-                                            </div>
-                                        </div>
+<!--                                        <div class="user-profile-action d-flex align-items-center pb-4">-->
+                                        <!--                                            <div class="user-pro-img">-->
+                                        <!--                                                <img src="/images/team1.jpg" alt="user-image">-->
+                                        <!--                                            </div>-->
+                                        <!--                                            <div class="upload-btn-box">-->
+                                        <!--                                                <p class="pb-2 font-size-15 line-height-24">최대 파일 크기는 5MB, 최소 치수: 150x150이며 적합한 파일은 .jpg.png입니다.</p>-->
+                                        <!--                                                <div class="file-upload-wrap file-upload-wrap-2">-->
+                                        <!--                                                    <input type="file" name="files[]" class="multi file-upload-input with-preview" maxlength="1">-->
+                                        <!--                                                    <span class="file-upload-text"><i class="la la-upload mr-2"></i>이미지 업로드</span>-->
+                                        <!--                                                    <a href="#" class="theme-btn theme-btn-small">이미지 삭제</a>-->
+                                        <!--                                                </div>-->
+                                        <!--                                            </div>-->
+                                        <!--                                        </div>-->
                                         <div class="contact-form-action">
 
                                             <div class="row">
@@ -288,7 +288,7 @@
                                                 <!--                                            </div>&lt;!&ndash; end col-lg-6 &ndash;&gt;-->
                                                 <div class="col-lg-12">
                                                     <div class="btn-box">
-                                                        <button class="theme-btn" id="btn-modify" >수정 하기</button>
+                                                        <button class="theme-btn" type="button" id="btn-modify" onclick="modifyMember();" >수정 하기</button>
                                                         &nbsp;
                                                         <button class="theme-btn" id="btn-delete" type="button">회원탈퇴</button>
                                                     </div>
@@ -530,31 +530,39 @@
 
     });
 
-    $("#btn-modify").on("click",function(){
-
-        const confirmCheck =  confirm("수정하시겠습니까?");
-
-        if(confirmCheck === true){
+    const modifyMember = function(){
 
 
 
-            if(con_check == false){
-                Swal.fire({icon:'warning',
-                            title:'정보를 다시 한번 확인해주세요! ' ,
+         Swal.fire({
+            icon:'warning',
+            title:'정말로 수정 하시겠습니까?',
+            showCancelButton : true,
+            confirmButtonText : "예",
+			cancelButtonText : "아니오",
+			closeOnConfirm : false,
+			closeOnCancel : true
 
-                            });
-                return false;
 
-            }else{
+        }).then(result =>{
 
+
+           if(result.isConfirmed && con_check == false){
+                 Swal.fire({icon:'error',
+                           title:'정보를 다시 확인해 주세요. ',
+
+                           });
+                  return false;
+            }else if(result.isConfirmed && con_check == true){
                 const modifyForm = document.getElementById("modifyForm");
                 modifyForm.submit();
-
+            }else{
+                return false;
             }
 
-        }
 
-    });
+        });
+    }
 
 
 
@@ -588,6 +596,7 @@
 
                                }
                            });
+
 
 </script>
 

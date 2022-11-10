@@ -285,57 +285,58 @@ INSERT INTO region (region_num,region,region_parent_num) VALUES (267,"합천군"
 INSERT INTO region (region_num,region,region_parent_num) VALUES (268,"서귀포시",17);
 INSERT INTO region (region_num,region,region_parent_num) VALUES (269,"제주시",17);
 
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (1,"주차가능","fa-sharp fa-solid fa-circle-parking",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (1,"주차가능","fa-solid fa-square-parking",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (2,"바다전망","fa-sharp fa-solid fa-water",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (3,"조식운영(뷔페)","fa-solid fa-utensils",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (4,"해수욕장 인근","fa-solid fa-umbrella-beach",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (5,"유료세탁","fa-solid fa-washing-machine",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (6,"수화물보관","fa-solid fa-cart-flatbed-boxes",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (5,"유료세탁","fa-solid fa-jug-detergent",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (6,"수화물보관","fa-solid fa-briefcase",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (7,"PC라운지","fa-solid fa-desktop",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (8,"피트니스","fa-solid fa-dumbbell",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (9,"비즈니스","fa-solid fa-briefcase",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (10,"루프탑","fa-solid fa-martini-glass-citrus",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (11,"흡연구역","fa-solid fa-smoking",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (12,"부티크 브랜드","fa-solid fa-clothes-hanger",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (13,"레스토랑","fa-sharp fa-solid fa-plate-utensils",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (14,"24시간 데스크","fa-solid fa-timer",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (12,"부티크 브랜드","fa-solid fa-copyright",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (13,"레스토랑","fa-solid fa-champagne-glasses",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (14,"24시간 데스크","fa-solid fa-person-circle-question",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (15,"커피숍","fa-solid fa-mug-saucer",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (16,"스파/월풀/욕조","fa-solid fa-bath",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (17,"식사가능","fa-solid fa-utensils",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (18,"노래방","fa-solid fa-microphone-stand",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (19,"게임","fa-solid fa-gamepad-modern",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (18,"노래방","fa-solid fa-microphone",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (19,"게임","fa-solid fa-gamepad",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (20,"수영장","fa-solid fa-water-ladder",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (21,"바베큐","fa-solid fa-grill-hot",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (21,"바베큐","fa-solid fa-fire",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (22,"매점/편의점","fa-solid fa-cart-shopping",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (23,"독채객실","fa-regular fa-house",null);
-INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (24,"기본양념","fa-solid fa-salt-shaker",null);
+INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (24,"기본양념","fa-solid fa-kitchen-set",null);
 INSERT INTO facilities (facilities_num,facility,facilties_original_file_name,facilties_save_filename) VALUES (25,"풀빌라","fa-solid fa-person-swimming",null);
 
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (1,"무료영화(OTT)","fa-regular fa-clapperboard");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (2,"파티룸","fa-solid fa-party-horn");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (3,"와이파이","a-solid fa-wifi");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (4,"파티가능","fa-solid fa-face-party");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (5,"객실금연","fa-solid fa-ban-smoking");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (6,"공용주방","fa-solid fa-kitchen-set");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (7,"공용거실","fa-solid fa-couch");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (8,"도미토리","fa-solid fa-bed-bunk");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (9,"커플룸","fa-solid fa-people");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (10,"트윈베드","fa-solid fa-bed-front");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (11,"야외수영장","fa-solid fa-water-ladder");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (12,"객실내PC","fa-solid fa-desktop");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (13,"VOD","fa-solid fa-tv-retro");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (14,"고사양PC","fa-solid fa-desktop");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (15,"공기청정기","fa-solid fa-arrows-spin");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (16,"야외테라스","fa-solid fa-table-picnic");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (17,"거울룸","fa-solid fa-sparkles");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (18,"커플PC","fa-solid fa-computer");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (19,"개별바베큐","fa-solid fa-grill-hot");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (20,"복층구조","fa-solid fa-grill-hot");
-INSERT INTO amenities (amenities_num,amenities_name,amenities_original_file_name) VALUES (21,"이벤트가능","fa-solid fa-calendar-star");
+INSERT INTO amenities (amenities_num, amenities_name, amenities_original_file_name) VALUES
+(1, '무료영화(OTT)', 'fa-regular fa-clapperboard'),
+(2, '파티룸', 'fa-solid fa-people-roof'),
+(3, '와이파이', 'fa-solid fa-wifi'),
+(4, '파티가능', 'fa-solid fa-cake-candles'),
+(5, '객실금연', 'fa-solid fa-ban-smoking'),
+(6, '공용주방', 'fa-solid fa-kitchen-set'),
+(7, '공용거실', 'fa-solid fa-couch'),
+(8, '도미토리', 'fa-solid fa-landmark-dome'),
+(9, '커플룸', 'fa-solid fa-children'),
+(10, '트윈베드', 'fa-solid fa-bed'),
+(11, '야외수영장', 'fa-solid fa-water-ladder'),
+(12, '객실내PC', 'fa-solid fa-desktop'),
+(13, 'VOD', 'fa-solid fa-clapperboard'),
+(14, '고사양PC', 'fa-solid fa-desktop'),
+(15, '공기청정기', 'fa-solid fa-arrows-spin'),
+(16, '야외테라스', 'fa-solid fa-person-booth'),
+(17, '거울룸', 'fa-solid fa-ticket'),
+(18, '커플PC', 'fa-solid fa-computer'),
+(19, '개별바베큐', 'fa-solid fa-fire'),
+(20, '복층구조', 'fa-solid fa-shop'),
+(21, '이벤트가능', 'fa-solid fa-gift');
 
 insert into accom_category values (1, "motel", "모텔");
 insert into accom_category values (2, "hotel", "호텔");
-insert into accom_category values (3, "pension", "펜션");
+insert into accom_category values (3, "pension", "펜션/풀빌라");
 insert into accom_category values (4, "guesthouse", "게스트하우스");
 
 INSERT INTO accommodation
@@ -10722,7 +10723,7 @@ INSERT INTO how_about_today_db.coupon_rules VALUES (11,'선착순 20,000원 할�
 INSERT INTO how_about_today_db.coupon_rules VALUES (12,'선착순 펜션/풀빌라 10% 할인 쿠폰입니다.','선착순 10% 할인 쿠폰',10000,70000,'비율 할인',10,25);
 
 
---멤버 가입 쿠폰
+-- 멤버 가입 쿠폰
 insert into coupon (coupon_num, end_date, start_date, status, coupon_rules_num, member_num)
 values
 (1, '2023-01-05', '2022-11-07', "사용 전", 1, 5),

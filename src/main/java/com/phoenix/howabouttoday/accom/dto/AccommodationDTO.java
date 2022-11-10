@@ -45,21 +45,17 @@ public class AccommodationDTO {
     private List<RoomDetailDTO> room;
     private List<AccomViewFacilities> accomViewFacilities;
 
-    public AccommodationDTO(Accommodation accom) {
+    public
+    AccommodationDTO(Accommodation accom) {
         this.accomNum = accom.getAccomNum();
         this.accomName = accom.getAccomName();
         this.accomTel = accom.getAccomTel();
         this.accomCategory = accom.getAccomCategory();
         this.region = accom.getRegion();
         this.accomAddress = accom.getAccomAddress1() + " " + accom.getAccomAddress2() + " " + accom.getAccomAddress3();
-        this.accomRating = accom.getRoom().stream()
-                .mapToDouble(room -> room.getRoomRating())
-                .average().getAsDouble();
-        DecimalFormat df1 = new DecimalFormat("0.0");
-        this.accomRating = Double.valueOf(df1.format(this.accomRating));
-        this.totalReviewNum = accom.getRoom().stream()
-                .mapToInt(room -> room.getRoomReviewNum())
-                .sum();
+        this.accomRating = accom.getAccomRating();
+
+        this.totalReviewNum = accom.getTotalReviewNum();
         this.accomWishlistCount = accom.getAccomWishlistCount();
         this.checkIn = accom.getCheckIn();
         this.checkOut = accom.getCheckOut();

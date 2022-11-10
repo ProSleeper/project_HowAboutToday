@@ -282,9 +282,6 @@ public class MemberController {
     }
 
 
-
-
-
     //리뷰페이지 가기.
     @GetMapping("user-dashboard-reviews")
     public String getUserDashboardReviews(@LoginUser SessionDTO sessionDTO, Model model) {
@@ -294,16 +291,9 @@ public class MemberController {
         }
 
         List<MyReviewDTO> memberReivews = reviewService.getMemberReivew(sessionDTO.getMemberNum());
-
         model.addAttribute("memberReivews", memberReivews);
-
         return "member/userdashboard/user-dashboard-reviews";
     }
-
-
-
-
-
 
     @PostMapping("user-dashboard-reviews")
     public String postUserDashboardReviews() {

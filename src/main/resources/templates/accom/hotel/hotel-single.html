@@ -54,7 +54,7 @@
                                         <p class="mr-2" th:text="${accom.accomAddress}"></p>
                                         <p>
                                             <span class="badge badge-warning text-white font-size-16"
-                                                  th:text="${accom.accomRating}"></span>&nbsp;
+                                                  th:text="${#numbers.formatDecimal(accom.accomRating, 1, 1)}"></span>&nbsp;
                                             <span th:text="|(${accom.totalReviewNum}개의 리뷰)|"></span>
                                         </p>
                                     </div>
@@ -440,7 +440,7 @@
             let star = "";
             newReview +=     `<div class="comment" >`
             newReview +=         `<div class="comment-avatar">`
-            newReview +=             `<img class="avatar__img" alt="" src="/data/images/${review[i].memberFileName}">`
+            newReview +=             `<img class="avatar__img" alt="" src="/images/profile5.png">`
             newReview +=         `</div>`
             newReview +=         `<div class="comment-body">`
             newReview +=             `<div class="meta-data">`
@@ -576,7 +576,6 @@
        map.setLevel(mapOption.level);
    }
    //카카오맵 로직 끝
-
     function roomDetails(roomNum){
            $("#hiddenNum").attr("value",roomNum);
            var searchForm = document.getElementById("searchForm")
